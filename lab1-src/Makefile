@@ -3,7 +3,7 @@ CC = gcc
 
 CFLAGS = --std=gnu11 -Wall
 
-all: git-commit MyMalloc.so test0 test1-1 test1-2 test1-3 test1-4 test1 test2 test3 test4 test5 test6 test7 test8 test9 test10
+all: MyMalloc.so test0 test1-1 test1-2 test1-3 test1-4 test1 test2 test3 test4 test5 test6 test7 test8 test9 test10
 
 MyMalloc.so: MyMalloc.c
 	$(CC) $(CFLAGS) -fPIC -c -g MyMalloc.c
