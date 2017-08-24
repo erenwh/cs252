@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="cs252"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/hanwang/cs252/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/hanwang/cs252/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/hanwang/cs252/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cs252">
+				<Option output="/home/hanwang/cs252/cmake-build-debug/cs252" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hanwang/cs252/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 cs252"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cs252/fast">
+				<Option output="/home/hanwang/cs252/cmake-build-debug/cs252" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hanwang/cs252/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 cs252/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/hanwang/cs252/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/hanwang/cs252/lab1-src/Makefile">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/MyMalloc.c">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/MyMalloc.h">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/none">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test0.c">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test0.org">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test1-1.c">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test1-1.org">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test1-2.c">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test1-2.org">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test1-3.c">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test1-3.org">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test1-4.c">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test1-4.org">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test1.c">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test1.org">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test10.c">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test10.org">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test2.c">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test2.org">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test3.c">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test3.org">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test4.c">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test4.org">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test5.c">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test5.org">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test6.c">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test6.org">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test7.c">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test7.org">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test8.c">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test8.org">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test9.c">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/test9.org">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/lab1-src/testall">
+			<Option target="cs252"/>
+		</Unit>
+		<Unit filename="/home/hanwang/cs252/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
