@@ -1,3 +1,3 @@
-/home/hanwang/cs252/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/hanwang/cs252/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/hanwang/cs252/cmake-build-debug/CMakeFiles/cs252.dir
+/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir

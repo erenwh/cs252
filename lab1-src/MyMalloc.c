@@ -28,24 +28,22 @@ pthread_mutex_t mutex;
 
 static bool verbose = false;
 
-extern void atExitHandlerInC()
-{
-  if (verbose)
-    print();
+extern void atExitHandlerInC() {
+    if (verbose)
+        print();
 }
 
-static void * getMemoryFromOS(size_t size)
-{
-  // Use sbrk() to get memory from OS
-  _heapSize += size;
- 
-  void *mem = sbrk(size);
+static void *getMemoryFromOS(size_t size) {
+    // Use sbrk() to get memory from OS
+    _heapSize += size;
 
-  if(!_initialized){
-      _memStart = mem;
-  }
+    void *mem = sbrk(size);
 
-  return mem;
+    if (!_initialized) {
+        _memStart = mem;
+    }
+
+    return mem;
 }
 
 
@@ -55,51 +53,49 @@ static void * getMemoryFromOS(size_t size)
  * @param size of the request
  * @return a FreeObject pointer to the beginning of the chunk
  */
-static FreeObject * getNewChunk(size_t size)
-{
-  void *mem = getMemoryFromOS(size);
+static FreeObject *getNewChunk(size_t size) {
+    void *mem = getMemoryFromOS(size);
 
-  // establish fence posts
-  BoundaryTag *fencePostHead = (BoundaryTag *)mem;
-  setAllocated(fencePostHead, ALLOCATED);
-  setSize(fencePostHead, 0);
+    // establish fence posts
+    BoundaryTag *fencePostHead = (BoundaryTag *) mem;
+    setAllocated(fencePostHead, ALLOCATED);
+    setSize(fencePostHead, 0);
 
-  char *temp = (char *)mem + size - sizeof(BoundaryTag);
-  BoundaryTag *fencePostFoot = (BoundaryTag *)temp;
-  setAllocated(fencePostFoot, ALLOCATED);
-  setSize(fencePostFoot, 0);
- 
-  return (FreeObject *)((char *)mem + sizeof(BoundaryTag));
+    char *temp = (char *) mem + size - sizeof(BoundaryTag);
+    BoundaryTag *fencePostFoot = (BoundaryTag *) temp;
+    setAllocated(fencePostFoot, ALLOCATED);
+    setSize(fencePostFoot, 0);
+
+    return (FreeObject *) ((char *) mem + sizeof(BoundaryTag));
 }
 
 /**
  * @brief If no blocks have been allocated, get more memory and 
  * set up the free list
  */
-static void initialize()
-{
-  verbose = true;
+static void initialize() {
+    verbose = true;
 
-  pthread_mutex_init(&mutex, NULL);
+    pthread_mutex_init(&mutex, NULL);
 
-  // print statistics at exit
-  atexit(atExitHandlerInC);
+    // print statistics at exit
+    atexit(atExitHandlerInC);
 
-  FreeObject *firstChunk = getNewChunk(ARENA_SIZE);
+    FreeObject *firstChunk = getNewChunk(ARENA_SIZE);
 
-  // initialize the list to point to the firstChunk
-  _freeList = &_freeListSentinel;
-  setSize(&firstChunk->boundary_tag, ARENA_SIZE - (2*sizeof(BoundaryTag))); // ~2MB
-  firstChunk->boundary_tag._leftObjectSize = 0;
-  setAllocated(&firstChunk->boundary_tag, NOT_ALLOCATED);
+    // initialize the list to point to the firstChunk
+    _freeList = &_freeListSentinel;
+    setSize(&firstChunk->boundary_tag, ARENA_SIZE - (2 * sizeof(BoundaryTag))); // ~2MB
+    firstChunk->boundary_tag._leftObjectSize = 0;
+    setAllocated(&firstChunk->boundary_tag, NOT_ALLOCATED);
 
-  // link list pointer hookups
-  firstChunk->free_list_node._next = _freeList;
-  firstChunk->free_list_node._prev = _freeList;
-  _freeList->free_list_node._prev = firstChunk;
-  _freeList->free_list_node._next = firstChunk;
+    // link list pointer hookups
+    firstChunk->free_list_node._next = _freeList;
+    firstChunk->free_list_node._prev = _freeList;
+    _freeList->free_list_node._prev = firstChunk;
+    _freeList->free_list_node._next = firstChunk;
 
-  _initialized = 1;
+    _initialized = 1;
 }
 
 /**
@@ -113,29 +109,36 @@ static void initialize()
  * @return pointer to the first usable byte in memory for the requesting
  * program
  */
-static void * allocateObject(size_t size)
-{
-  // Make sure that allocator is initialized
-  if (!_initialized)
-    initialize();
-  // Round up the requested size to the next 8 byte boundary.
-  // Add the size of the block’s header (i.e. real_size = roundup8(requested size) + sizeof(header)).
-  size_t roundedSize = (size + sizeof(FreeObject) + 7) & ~7;
-  FreeObject * fo = _freelist-> free_list_node._next;
-  // Traverse the free list from the beginning, and find the first block large enough to satisfy the request (first fit).
-  while(fo != _freeList) { // when fo hit sentinal again = the freelist has been traversed
-      // If the block is large enough to be split (that is, the remainder is at least the size of the headers), split the block in two.
-      BoundaryTag bt = fo->boundary_tag;
-      if (gitSize(&bt) >= roundedSize && getSize(&bt) < roundedSize + sizeOf(FreeObject) + 8) {
-          setAllocated(&bt, ALLOCATED);
-      }
-  }
-  // Set the _allocated bit in the header and update the proceeding block’s _leftObjectSize to the size of the allocated block.
-  // The chosen block should be removed from the free list and returned to satisfy the request (see the diagrams below).
-  // If the block is not large enough to be split, simply remove that block from the list and return it.
-  // If the list does not have enough memory, request a new 2MB block, insert the block into the free list, and repeat step 3.
-  pthread_mutex_unlock(&mutex);
-  return getMemoryFromOS(size);
+static void *allocateObject(size_t size) {
+    // Make sure that allocator is initialized
+    if (!_initialized)
+        initialize();
+    // Round up the requested size to the next 8 byte boundary.
+    // Add the size of the block’s header (i.e. real_size = roundup8(requested size) + sizeof(header)).
+    size_t roundedSize = (size + sizeof(FreeObject) + 7) & ~7;
+    printf("rounded size is %zu\n", roundedSize);
+    FreeObject *fo = _freeList->free_list_node._next;
+    //printf("fo size is %zu\n", fo->boundary_tag._objectSizeAndAlloc);
+    // Traverse the free list from the beginning, and find the first block large enough to satisfy the request (first
+    // fit).
+    while (fo != _freeList) { // when fo hit sentinal again = the freelist has been traversed
+        // If the block is large enough to be split (that is, the remainder is at least the size of the headers), split
+        // the block in two.
+        BoundaryTag bt = fo->boundary_tag;
+        if (fo->boundary_tag._objectSizeAndAlloc >= roundedSize) {
+            char *_mem = (char *) fo + fo->boundary_tag._objectSizeAndAlloc - roundedSize;
+            fo->boundary_tag._objectSizeAndAlloc = fo->boundary_tag._objectSizeAndAlloc - roundedSize;
+            FreeObject *temp = (FreeObject *) _mem;
+
+        }
+    }
+    // Set the _allocated bit in the header and update the proceeding block’s _leftObjectSize to the size of the
+    // allocated block.
+    // The chosen block should be removed from the free list and returned to satisfy the request (see the diagrams below).
+    // If the block is not large enough to be split, simply remove that block from the list and return it.
+    // If the list does not have enough memory, request a new 2MB block, insert the block into the free list, and repeat step 3.
+    pthread_mutex_unlock(&mutex);
+    return getMemoryFromOS(size);
 }
 
 /**
@@ -146,32 +149,29 @@ static void * allocateObject(size_t size)
  *
  * @param ptr
  */
-static void freeObject(void *ptr)
-{
-  return;
+static void freeObject(void *ptr) {
+    return;
 }
 
-void print()
-{
-  printf("\n-------------------\n");
+void print() {
+    printf("\n-------------------\n");
 
-  printf("HeapSize:\t%zd bytes\n", _heapSize);
-  printf("# mallocs:\t%d\n", _mallocCalls);
-  printf("# reallocs:\t%d\n", _reallocCalls);
-  printf("# callocs:\t%d\n", _callocCalls);
-  printf("# frees:\t%d\n", _freeCalls);
+    printf("HeapSize:\t%zd bytes\n", _heapSize);
+    printf("# mallocs:\t%d\n", _mallocCalls);
+    printf("# reallocs:\t%d\n", _reallocCalls);
+    printf("# callocs:\t%d\n", _callocCalls);
+    printf("# frees:\t%d\n", _freeCalls);
 
-  printf("\n-------------------\n");
+    printf("\n-------------------\n");
 }
 
-void print_list()
-{
+void print_list() {
     printf("FreeList: ");
-    if (!_initialized) 
+    if (!_initialized)
         initialize();
     FreeObject *ptr = _freeList->free_list_node._next;
     while (ptr != _freeList) {
-        long offset = (long)ptr - (long)_memStart;
+        long offset = (long) ptr - (long) _memStart;
         printf("[offset:%ld,size:%zd]", offset, getSize(&ptr->boundary_tag));
         ptr = ptr->free_list_node._next;
         if (ptr != NULL)
@@ -192,71 +192,67 @@ void increaseFreeCalls() { _freeCalls++; }
 // C interface
 //
 
-extern void * malloc(size_t size)
-{
-  pthread_mutex_lock(&mutex);
-  increaseMallocCalls();
-  
-  return allocateObject(size);
+extern void *malloc(size_t size) {
+    pthread_mutex_lock(&mutex);
+    increaseMallocCalls();
+
+    return allocateObject(size);
 }
 
-extern void free(void *ptr)
-{
-  pthread_mutex_lock(&mutex);
-  increaseFreeCalls();
-  
-  if (ptr == 0) {
-    // No object to free
-    pthread_mutex_unlock(&mutex);
-    return;
-  }
-  
-  freeObject(ptr);
-}
+extern void free(void *ptr) {
+    pthread_mutex_lock(&mutex);
+    increaseFreeCalls();
 
-extern void * realloc(void *ptr, size_t size)
-{
-  pthread_mutex_lock(&mutex);
-  increaseReallocCalls();
-
-  // Allocate new object
-  void *newptr = allocateObject(size);
-
-  // Copy old object only if ptr != 0
-  if (ptr != 0) {
-
-    // copy only the minimum number of bytes
-    FreeObject *o = (FreeObject *)((char *) ptr - sizeof(BoundaryTag));
-    size_t sizeToCopy = getSize(&o->boundary_tag);
-    if (sizeToCopy > size) {
-      sizeToCopy = size;
+    if (ptr == 0) {
+        // No object to free
+        pthread_mutex_unlock(&mutex);
+        return;
     }
 
-    memcpy(newptr, ptr, sizeToCopy);
-
-    //Free old object
     freeObject(ptr);
-  }
-
-  return newptr;
 }
 
-extern void * calloc(size_t nelem, size_t elsize)
-{
-  pthread_mutex_lock(&mutex);
-  increaseCallocCalls();
-    
-  // calloc allocates and initializes
-  size_t size = nelem * elsize;
+extern void *realloc(void *ptr, size_t size) {
+    pthread_mutex_lock(&mutex);
+    increaseReallocCalls();
 
-  void *ptr = allocateObject(size);
+    // Allocate new object
+    void *newptr = allocateObject(size);
 
-  if (ptr) {
-    // No error
-    // Initialize chunk with 0s
-    memset(ptr, 0, size);
-  }
+    // Copy old object only if ptr != 0
+    if (ptr != 0) {
 
-  return ptr;
+        // copy only the minimum number of bytes
+        FreeObject *o = (FreeObject *) ((char *) ptr - sizeof(BoundaryTag));
+        size_t sizeToCopy = getSize(&o->boundary_tag);
+        if (sizeToCopy > size) {
+            sizeToCopy = size;
+        }
+
+        memcpy(newptr, ptr, sizeToCopy);
+
+        //Free old object
+        freeObject(ptr);
+    }
+
+    return newptr;
+}
+
+extern void *calloc(size_t nelem, size_t elsize) {
+    pthread_mutex_lock(&mutex);
+    increaseCallocCalls();
+
+    // calloc allocates and initializes
+    size_t size = nelem * elsize;
+
+    void *ptr = allocateObject(size);
+
+    if (ptr) {
+        // No error
+        // Initialize chunk with 0s
+        memset(ptr, 0, size);
+    }
+
+    return ptr;
 }
 
