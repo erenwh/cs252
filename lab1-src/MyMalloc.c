@@ -118,7 +118,22 @@ static void * allocateObject(size_t size)
   // Make sure that allocator is initialized
   if (!_initialized)
     initialize();
-
+  // Round up the requested size to the next 8 byte boundary.
+  // Add the size of the block’s header (i.e. real_size = roundup8(requested size) + sizeof(header)).
+  size_t roundedSize = (size + sizeof(FreeObject) + 7) & ~7;
+  FreeObject * fo = _freelist-> free_list_node._next;
+  // Traverse the free list from the beginning, and find the first block large enough to satisfy the request (first fit).
+  while(fo != _freeList) { // when fo hit sentinal again = the freelist has been traversed
+      // If the block is large enough to be split (that is, the remainder is at least the size of the headers), split the block in two.
+      BoundaryTag bt = fo->boundary_tag;
+      if (gitSize(&bt) >= roundedSize && getSize(&bt) < roundedSize + sizeOf(FreeObject) + 8) {
+          setAllocated(&bt, ALLOCATED);
+      }
+  }
+  // Set the _allocated bit in the header and update the proceeding block’s _leftObjectSize to the size of the allocated block.
+  // The chosen block should be removed from the free list and returned to satisfy the request (see the diagrams below).
+  // If the block is not large enough to be split, simply remove that block from the list and return it.
+  // If the list does not have enough memory, request a new 2MB block, insert the block into the free list, and repeat step 3.
   pthread_mutex_unlock(&mutex);
   return getMemoryFromOS(size);
 }
