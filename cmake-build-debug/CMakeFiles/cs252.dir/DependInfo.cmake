@@ -4,22 +4,22 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/hanwang/CLionProjects/cs252/lab1-src/MyMalloc.c" "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.o"
-  "/Users/hanwang/CLionProjects/cs252/lab1-src/test0.c" "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test0.c.o"
-  "/Users/hanwang/CLionProjects/cs252/lab1-src/test1-1.c" "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test1-1.c.o"
-  "/Users/hanwang/CLionProjects/cs252/lab1-src/test1-2.c" "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test1-2.c.o"
-  "/Users/hanwang/CLionProjects/cs252/lab1-src/test1-3.c" "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test1-3.c.o"
-  "/Users/hanwang/CLionProjects/cs252/lab1-src/test1-4.c" "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test1-4.c.o"
-  "/Users/hanwang/CLionProjects/cs252/lab1-src/test1.c" "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test1.c.o"
-  "/Users/hanwang/CLionProjects/cs252/lab1-src/test10.c" "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test10.c.o"
-  "/Users/hanwang/CLionProjects/cs252/lab1-src/test2.c" "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test2.c.o"
-  "/Users/hanwang/CLionProjects/cs252/lab1-src/test3.c" "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test3.c.o"
-  "/Users/hanwang/CLionProjects/cs252/lab1-src/test4.c" "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test4.c.o"
-  "/Users/hanwang/CLionProjects/cs252/lab1-src/test5.c" "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test5.c.o"
-  "/Users/hanwang/CLionProjects/cs252/lab1-src/test6.c" "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test6.c.o"
-  "/Users/hanwang/CLionProjects/cs252/lab1-src/test7.c" "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test7.c.o"
-  "/Users/hanwang/CLionProjects/cs252/lab1-src/test8.c" "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test8.c.o"
-  "/Users/hanwang/CLionProjects/cs252/lab1-src/test9.c" "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test9.c.o"
+  "/Users/HanWang/ClionProjects/cs252/lab1-src/MyMalloc.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.o"
+  "/Users/HanWang/ClionProjects/cs252/lab1-src/test0.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test0.c.o"
+  "/Users/HanWang/ClionProjects/cs252/lab1-src/test1-1.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test1-1.c.o"
+  "/Users/HanWang/ClionProjects/cs252/lab1-src/test1-2.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test1-2.c.o"
+  "/Users/HanWang/ClionProjects/cs252/lab1-src/test1-3.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test1-3.c.o"
+  "/Users/HanWang/ClionProjects/cs252/lab1-src/test1-4.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test1-4.c.o"
+  "/Users/HanWang/ClionProjects/cs252/lab1-src/test1.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test1.c.o"
+  "/Users/HanWang/ClionProjects/cs252/lab1-src/test10.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test10.c.o"
+  "/Users/HanWang/ClionProjects/cs252/lab1-src/test2.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test2.c.o"
+  "/Users/HanWang/ClionProjects/cs252/lab1-src/test3.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test3.c.o"
+  "/Users/HanWang/ClionProjects/cs252/lab1-src/test4.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test4.c.o"
+  "/Users/HanWang/ClionProjects/cs252/lab1-src/test5.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test5.c.o"
+  "/Users/HanWang/ClionProjects/cs252/lab1-src/test6.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test6.c.o"
+  "/Users/HanWang/ClionProjects/cs252/lab1-src/test7.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test7.c.o"
+  "/Users/HanWang/ClionProjects/cs252/lab1-src/test8.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test8.c.o"
+  "/Users/HanWang/ClionProjects/cs252/lab1-src/test9.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test9.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

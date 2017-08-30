@@ -1,4 +1,4 @@
-# Install script for directory: /Users/hanwang/CLionProjects/cs252
+# Install script for directory: /Users/HanWang/ClionProjects/cs252
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,5 +35,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/hanwang/CLionProjects/cs252/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

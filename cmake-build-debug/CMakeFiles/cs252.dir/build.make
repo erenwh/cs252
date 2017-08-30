@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/hanwang/CLionProjects/cs252
+CMAKE_SOURCE_DIR = /Users/HanWang/ClionProjects/cs252
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/hanwang/CLionProjects/cs252/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/HanWang/ClionProjects/cs252/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/cs252.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/cs252.dir/flags.make
 
 CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.o: CMakeFiles/cs252.dir/flags.make
 CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.o: ../lab1-src/MyMalloc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.o   -c /Users/hanwang/CLionProjects/cs252/lab1-src/MyMalloc.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.o   -c /Users/HanWang/ClionProjects/cs252/lab1-src/MyMalloc.c
 
 CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hanwang/CLionProjects/cs252/lab1-src/MyMalloc.c > CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/HanWang/ClionProjects/cs252/lab1-src/MyMalloc.c > CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.i
 
 CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hanwang/CLionProjects/cs252/lab1-src/MyMalloc.c -o CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/HanWang/ClionProjects/cs252/lab1-src/MyMalloc.c -o CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.s
 
 CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.o.provides.build: CMakeFiles/cs252.dir/
 
 CMakeFiles/cs252.dir/lab1-src/test0.c.o: CMakeFiles/cs252.dir/flags.make
 CMakeFiles/cs252.dir/lab1-src/test0.c.o: ../lab1-src/test0.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/cs252.dir/lab1-src/test0.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test0.c.o   -c /Users/hanwang/CLionProjects/cs252/lab1-src/test0.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/cs252.dir/lab1-src/test0.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test0.c.o   -c /Users/HanWang/ClionProjects/cs252/lab1-src/test0.c
 
 CMakeFiles/cs252.dir/lab1-src/test0.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cs252.dir/lab1-src/test0.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hanwang/CLionProjects/cs252/lab1-src/test0.c > CMakeFiles/cs252.dir/lab1-src/test0.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/HanWang/ClionProjects/cs252/lab1-src/test0.c > CMakeFiles/cs252.dir/lab1-src/test0.c.i
 
 CMakeFiles/cs252.dir/lab1-src/test0.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cs252.dir/lab1-src/test0.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hanwang/CLionProjects/cs252/lab1-src/test0.c -o CMakeFiles/cs252.dir/lab1-src/test0.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/HanWang/ClionProjects/cs252/lab1-src/test0.c -o CMakeFiles/cs252.dir/lab1-src/test0.c.s
 
 CMakeFiles/cs252.dir/lab1-src/test0.c.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/cs252.dir/lab1-src/test0.c.o.provides.build: CMakeFiles/cs252.dir/lab
 
 CMakeFiles/cs252.dir/lab1-src/test1-1.c.o: CMakeFiles/cs252.dir/flags.make
 CMakeFiles/cs252.dir/lab1-src/test1-1.c.o: ../lab1-src/test1-1.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/cs252.dir/lab1-src/test1-1.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test1-1.c.o   -c /Users/hanwang/CLionProjects/cs252/lab1-src/test1-1.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/cs252.dir/lab1-src/test1-1.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test1-1.c.o   -c /Users/HanWang/ClionProjects/cs252/lab1-src/test1-1.c
 
 CMakeFiles/cs252.dir/lab1-src/test1-1.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cs252.dir/lab1-src/test1-1.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hanwang/CLionProjects/cs252/lab1-src/test1-1.c > CMakeFiles/cs252.dir/lab1-src/test1-1.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/HanWang/ClionProjects/cs252/lab1-src/test1-1.c > CMakeFiles/cs252.dir/lab1-src/test1-1.c.i
 
 CMakeFiles/cs252.dir/lab1-src/test1-1.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cs252.dir/lab1-src/test1-1.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hanwang/CLionProjects/cs252/lab1-src/test1-1.c -o CMakeFiles/cs252.dir/lab1-src/test1-1.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/HanWang/ClionProjects/cs252/lab1-src/test1-1.c -o CMakeFiles/cs252.dir/lab1-src/test1-1.c.s
 
 CMakeFiles/cs252.dir/lab1-src/test1-1.c.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/cs252.dir/lab1-src/test1-1.c.o.provides.build: CMakeFiles/cs252.dir/l
 
 CMakeFiles/cs252.dir/lab1-src/test1-2.c.o: CMakeFiles/cs252.dir/flags.make
 CMakeFiles/cs252.dir/lab1-src/test1-2.c.o: ../lab1-src/test1-2.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/cs252.dir/lab1-src/test1-2.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test1-2.c.o   -c /Users/hanwang/CLionProjects/cs252/lab1-src/test1-2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/cs252.dir/lab1-src/test1-2.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test1-2.c.o   -c /Users/HanWang/ClionProjects/cs252/lab1-src/test1-2.c
 
 CMakeFiles/cs252.dir/lab1-src/test1-2.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cs252.dir/lab1-src/test1-2.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hanwang/CLionProjects/cs252/lab1-src/test1-2.c > CMakeFiles/cs252.dir/lab1-src/test1-2.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/HanWang/ClionProjects/cs252/lab1-src/test1-2.c > CMakeFiles/cs252.dir/lab1-src/test1-2.c.i
 
 CMakeFiles/cs252.dir/lab1-src/test1-2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cs252.dir/lab1-src/test1-2.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hanwang/CLionProjects/cs252/lab1-src/test1-2.c -o CMakeFiles/cs252.dir/lab1-src/test1-2.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/HanWang/ClionProjects/cs252/lab1-src/test1-2.c -o CMakeFiles/cs252.dir/lab1-src/test1-2.c.s
 
 CMakeFiles/cs252.dir/lab1-src/test1-2.c.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/cs252.dir/lab1-src/test1-2.c.o.provides.build: CMakeFiles/cs252.dir/l
 
 CMakeFiles/cs252.dir/lab1-src/test1-3.c.o: CMakeFiles/cs252.dir/flags.make
 CMakeFiles/cs252.dir/lab1-src/test1-3.c.o: ../lab1-src/test1-3.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/cs252.dir/lab1-src/test1-3.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test1-3.c.o   -c /Users/hanwang/CLionProjects/cs252/lab1-src/test1-3.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/cs252.dir/lab1-src/test1-3.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test1-3.c.o   -c /Users/HanWang/ClionProjects/cs252/lab1-src/test1-3.c
 
 CMakeFiles/cs252.dir/lab1-src/test1-3.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cs252.dir/lab1-src/test1-3.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hanwang/CLionProjects/cs252/lab1-src/test1-3.c > CMakeFiles/cs252.dir/lab1-src/test1-3.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/HanWang/ClionProjects/cs252/lab1-src/test1-3.c > CMakeFiles/cs252.dir/lab1-src/test1-3.c.i
 
 CMakeFiles/cs252.dir/lab1-src/test1-3.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cs252.dir/lab1-src/test1-3.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hanwang/CLionProjects/cs252/lab1-src/test1-3.c -o CMakeFiles/cs252.dir/lab1-src/test1-3.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/HanWang/ClionProjects/cs252/lab1-src/test1-3.c -o CMakeFiles/cs252.dir/lab1-src/test1-3.c.s
 
 CMakeFiles/cs252.dir/lab1-src/test1-3.c.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/cs252.dir/lab1-src/test1-3.c.o.provides.build: CMakeFiles/cs252.dir/l
 
 CMakeFiles/cs252.dir/lab1-src/test1-4.c.o: CMakeFiles/cs252.dir/flags.make
 CMakeFiles/cs252.dir/lab1-src/test1-4.c.o: ../lab1-src/test1-4.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/cs252.dir/lab1-src/test1-4.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test1-4.c.o   -c /Users/hanwang/CLionProjects/cs252/lab1-src/test1-4.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/cs252.dir/lab1-src/test1-4.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test1-4.c.o   -c /Users/HanWang/ClionProjects/cs252/lab1-src/test1-4.c
 
 CMakeFiles/cs252.dir/lab1-src/test1-4.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cs252.dir/lab1-src/test1-4.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hanwang/CLionProjects/cs252/lab1-src/test1-4.c > CMakeFiles/cs252.dir/lab1-src/test1-4.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/HanWang/ClionProjects/cs252/lab1-src/test1-4.c > CMakeFiles/cs252.dir/lab1-src/test1-4.c.i
 
 CMakeFiles/cs252.dir/lab1-src/test1-4.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cs252.dir/lab1-src/test1-4.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hanwang/CLionProjects/cs252/lab1-src/test1-4.c -o CMakeFiles/cs252.dir/lab1-src/test1-4.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/HanWang/ClionProjects/cs252/lab1-src/test1-4.c -o CMakeFiles/cs252.dir/lab1-src/test1-4.c.s
 
 CMakeFiles/cs252.dir/lab1-src/test1-4.c.o.requires:
 
@@ -203,16 +203,16 @@ CMakeFiles/cs252.dir/lab1-src/test1-4.c.o.provides.build: CMakeFiles/cs252.dir/l
 
 CMakeFiles/cs252.dir/lab1-src/test1.c.o: CMakeFiles/cs252.dir/flags.make
 CMakeFiles/cs252.dir/lab1-src/test1.c.o: ../lab1-src/test1.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/cs252.dir/lab1-src/test1.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test1.c.o   -c /Users/hanwang/CLionProjects/cs252/lab1-src/test1.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/cs252.dir/lab1-src/test1.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test1.c.o   -c /Users/HanWang/ClionProjects/cs252/lab1-src/test1.c
 
 CMakeFiles/cs252.dir/lab1-src/test1.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cs252.dir/lab1-src/test1.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hanwang/CLionProjects/cs252/lab1-src/test1.c > CMakeFiles/cs252.dir/lab1-src/test1.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/HanWang/ClionProjects/cs252/lab1-src/test1.c > CMakeFiles/cs252.dir/lab1-src/test1.c.i
 
 CMakeFiles/cs252.dir/lab1-src/test1.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cs252.dir/lab1-src/test1.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hanwang/CLionProjects/cs252/lab1-src/test1.c -o CMakeFiles/cs252.dir/lab1-src/test1.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/HanWang/ClionProjects/cs252/lab1-src/test1.c -o CMakeFiles/cs252.dir/lab1-src/test1.c.s
 
 CMakeFiles/cs252.dir/lab1-src/test1.c.o.requires:
 
@@ -227,16 +227,16 @@ CMakeFiles/cs252.dir/lab1-src/test1.c.o.provides.build: CMakeFiles/cs252.dir/lab
 
 CMakeFiles/cs252.dir/lab1-src/test10.c.o: CMakeFiles/cs252.dir/flags.make
 CMakeFiles/cs252.dir/lab1-src/test10.c.o: ../lab1-src/test10.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/cs252.dir/lab1-src/test10.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test10.c.o   -c /Users/hanwang/CLionProjects/cs252/lab1-src/test10.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/cs252.dir/lab1-src/test10.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test10.c.o   -c /Users/HanWang/ClionProjects/cs252/lab1-src/test10.c
 
 CMakeFiles/cs252.dir/lab1-src/test10.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cs252.dir/lab1-src/test10.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hanwang/CLionProjects/cs252/lab1-src/test10.c > CMakeFiles/cs252.dir/lab1-src/test10.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/HanWang/ClionProjects/cs252/lab1-src/test10.c > CMakeFiles/cs252.dir/lab1-src/test10.c.i
 
 CMakeFiles/cs252.dir/lab1-src/test10.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cs252.dir/lab1-src/test10.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hanwang/CLionProjects/cs252/lab1-src/test10.c -o CMakeFiles/cs252.dir/lab1-src/test10.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/HanWang/ClionProjects/cs252/lab1-src/test10.c -o CMakeFiles/cs252.dir/lab1-src/test10.c.s
 
 CMakeFiles/cs252.dir/lab1-src/test10.c.o.requires:
 
@@ -251,16 +251,16 @@ CMakeFiles/cs252.dir/lab1-src/test10.c.o.provides.build: CMakeFiles/cs252.dir/la
 
 CMakeFiles/cs252.dir/lab1-src/test2.c.o: CMakeFiles/cs252.dir/flags.make
 CMakeFiles/cs252.dir/lab1-src/test2.c.o: ../lab1-src/test2.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/cs252.dir/lab1-src/test2.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test2.c.o   -c /Users/hanwang/CLionProjects/cs252/lab1-src/test2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/cs252.dir/lab1-src/test2.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test2.c.o   -c /Users/HanWang/ClionProjects/cs252/lab1-src/test2.c
 
 CMakeFiles/cs252.dir/lab1-src/test2.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cs252.dir/lab1-src/test2.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hanwang/CLionProjects/cs252/lab1-src/test2.c > CMakeFiles/cs252.dir/lab1-src/test2.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/HanWang/ClionProjects/cs252/lab1-src/test2.c > CMakeFiles/cs252.dir/lab1-src/test2.c.i
 
 CMakeFiles/cs252.dir/lab1-src/test2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cs252.dir/lab1-src/test2.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hanwang/CLionProjects/cs252/lab1-src/test2.c -o CMakeFiles/cs252.dir/lab1-src/test2.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/HanWang/ClionProjects/cs252/lab1-src/test2.c -o CMakeFiles/cs252.dir/lab1-src/test2.c.s
 
 CMakeFiles/cs252.dir/lab1-src/test2.c.o.requires:
 
@@ -275,16 +275,16 @@ CMakeFiles/cs252.dir/lab1-src/test2.c.o.provides.build: CMakeFiles/cs252.dir/lab
 
 CMakeFiles/cs252.dir/lab1-src/test3.c.o: CMakeFiles/cs252.dir/flags.make
 CMakeFiles/cs252.dir/lab1-src/test3.c.o: ../lab1-src/test3.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/cs252.dir/lab1-src/test3.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test3.c.o   -c /Users/hanwang/CLionProjects/cs252/lab1-src/test3.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/cs252.dir/lab1-src/test3.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test3.c.o   -c /Users/HanWang/ClionProjects/cs252/lab1-src/test3.c
 
 CMakeFiles/cs252.dir/lab1-src/test3.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cs252.dir/lab1-src/test3.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hanwang/CLionProjects/cs252/lab1-src/test3.c > CMakeFiles/cs252.dir/lab1-src/test3.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/HanWang/ClionProjects/cs252/lab1-src/test3.c > CMakeFiles/cs252.dir/lab1-src/test3.c.i
 
 CMakeFiles/cs252.dir/lab1-src/test3.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cs252.dir/lab1-src/test3.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hanwang/CLionProjects/cs252/lab1-src/test3.c -o CMakeFiles/cs252.dir/lab1-src/test3.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/HanWang/ClionProjects/cs252/lab1-src/test3.c -o CMakeFiles/cs252.dir/lab1-src/test3.c.s
 
 CMakeFiles/cs252.dir/lab1-src/test3.c.o.requires:
 
@@ -299,16 +299,16 @@ CMakeFiles/cs252.dir/lab1-src/test3.c.o.provides.build: CMakeFiles/cs252.dir/lab
 
 CMakeFiles/cs252.dir/lab1-src/test4.c.o: CMakeFiles/cs252.dir/flags.make
 CMakeFiles/cs252.dir/lab1-src/test4.c.o: ../lab1-src/test4.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/cs252.dir/lab1-src/test4.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test4.c.o   -c /Users/hanwang/CLionProjects/cs252/lab1-src/test4.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/cs252.dir/lab1-src/test4.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test4.c.o   -c /Users/HanWang/ClionProjects/cs252/lab1-src/test4.c
 
 CMakeFiles/cs252.dir/lab1-src/test4.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cs252.dir/lab1-src/test4.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hanwang/CLionProjects/cs252/lab1-src/test4.c > CMakeFiles/cs252.dir/lab1-src/test4.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/HanWang/ClionProjects/cs252/lab1-src/test4.c > CMakeFiles/cs252.dir/lab1-src/test4.c.i
 
 CMakeFiles/cs252.dir/lab1-src/test4.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cs252.dir/lab1-src/test4.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hanwang/CLionProjects/cs252/lab1-src/test4.c -o CMakeFiles/cs252.dir/lab1-src/test4.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/HanWang/ClionProjects/cs252/lab1-src/test4.c -o CMakeFiles/cs252.dir/lab1-src/test4.c.s
 
 CMakeFiles/cs252.dir/lab1-src/test4.c.o.requires:
 
@@ -323,16 +323,16 @@ CMakeFiles/cs252.dir/lab1-src/test4.c.o.provides.build: CMakeFiles/cs252.dir/lab
 
 CMakeFiles/cs252.dir/lab1-src/test5.c.o: CMakeFiles/cs252.dir/flags.make
 CMakeFiles/cs252.dir/lab1-src/test5.c.o: ../lab1-src/test5.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/cs252.dir/lab1-src/test5.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test5.c.o   -c /Users/hanwang/CLionProjects/cs252/lab1-src/test5.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/cs252.dir/lab1-src/test5.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test5.c.o   -c /Users/HanWang/ClionProjects/cs252/lab1-src/test5.c
 
 CMakeFiles/cs252.dir/lab1-src/test5.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cs252.dir/lab1-src/test5.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hanwang/CLionProjects/cs252/lab1-src/test5.c > CMakeFiles/cs252.dir/lab1-src/test5.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/HanWang/ClionProjects/cs252/lab1-src/test5.c > CMakeFiles/cs252.dir/lab1-src/test5.c.i
 
 CMakeFiles/cs252.dir/lab1-src/test5.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cs252.dir/lab1-src/test5.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hanwang/CLionProjects/cs252/lab1-src/test5.c -o CMakeFiles/cs252.dir/lab1-src/test5.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/HanWang/ClionProjects/cs252/lab1-src/test5.c -o CMakeFiles/cs252.dir/lab1-src/test5.c.s
 
 CMakeFiles/cs252.dir/lab1-src/test5.c.o.requires:
 
@@ -347,16 +347,16 @@ CMakeFiles/cs252.dir/lab1-src/test5.c.o.provides.build: CMakeFiles/cs252.dir/lab
 
 CMakeFiles/cs252.dir/lab1-src/test6.c.o: CMakeFiles/cs252.dir/flags.make
 CMakeFiles/cs252.dir/lab1-src/test6.c.o: ../lab1-src/test6.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/cs252.dir/lab1-src/test6.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test6.c.o   -c /Users/hanwang/CLionProjects/cs252/lab1-src/test6.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/cs252.dir/lab1-src/test6.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test6.c.o   -c /Users/HanWang/ClionProjects/cs252/lab1-src/test6.c
 
 CMakeFiles/cs252.dir/lab1-src/test6.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cs252.dir/lab1-src/test6.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hanwang/CLionProjects/cs252/lab1-src/test6.c > CMakeFiles/cs252.dir/lab1-src/test6.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/HanWang/ClionProjects/cs252/lab1-src/test6.c > CMakeFiles/cs252.dir/lab1-src/test6.c.i
 
 CMakeFiles/cs252.dir/lab1-src/test6.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cs252.dir/lab1-src/test6.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hanwang/CLionProjects/cs252/lab1-src/test6.c -o CMakeFiles/cs252.dir/lab1-src/test6.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/HanWang/ClionProjects/cs252/lab1-src/test6.c -o CMakeFiles/cs252.dir/lab1-src/test6.c.s
 
 CMakeFiles/cs252.dir/lab1-src/test6.c.o.requires:
 
@@ -371,16 +371,16 @@ CMakeFiles/cs252.dir/lab1-src/test6.c.o.provides.build: CMakeFiles/cs252.dir/lab
 
 CMakeFiles/cs252.dir/lab1-src/test7.c.o: CMakeFiles/cs252.dir/flags.make
 CMakeFiles/cs252.dir/lab1-src/test7.c.o: ../lab1-src/test7.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/cs252.dir/lab1-src/test7.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test7.c.o   -c /Users/hanwang/CLionProjects/cs252/lab1-src/test7.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/cs252.dir/lab1-src/test7.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test7.c.o   -c /Users/HanWang/ClionProjects/cs252/lab1-src/test7.c
 
 CMakeFiles/cs252.dir/lab1-src/test7.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cs252.dir/lab1-src/test7.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hanwang/CLionProjects/cs252/lab1-src/test7.c > CMakeFiles/cs252.dir/lab1-src/test7.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/HanWang/ClionProjects/cs252/lab1-src/test7.c > CMakeFiles/cs252.dir/lab1-src/test7.c.i
 
 CMakeFiles/cs252.dir/lab1-src/test7.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cs252.dir/lab1-src/test7.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hanwang/CLionProjects/cs252/lab1-src/test7.c -o CMakeFiles/cs252.dir/lab1-src/test7.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/HanWang/ClionProjects/cs252/lab1-src/test7.c -o CMakeFiles/cs252.dir/lab1-src/test7.c.s
 
 CMakeFiles/cs252.dir/lab1-src/test7.c.o.requires:
 
@@ -395,16 +395,16 @@ CMakeFiles/cs252.dir/lab1-src/test7.c.o.provides.build: CMakeFiles/cs252.dir/lab
 
 CMakeFiles/cs252.dir/lab1-src/test8.c.o: CMakeFiles/cs252.dir/flags.make
 CMakeFiles/cs252.dir/lab1-src/test8.c.o: ../lab1-src/test8.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/cs252.dir/lab1-src/test8.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test8.c.o   -c /Users/hanwang/CLionProjects/cs252/lab1-src/test8.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/cs252.dir/lab1-src/test8.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test8.c.o   -c /Users/HanWang/ClionProjects/cs252/lab1-src/test8.c
 
 CMakeFiles/cs252.dir/lab1-src/test8.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cs252.dir/lab1-src/test8.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hanwang/CLionProjects/cs252/lab1-src/test8.c > CMakeFiles/cs252.dir/lab1-src/test8.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/HanWang/ClionProjects/cs252/lab1-src/test8.c > CMakeFiles/cs252.dir/lab1-src/test8.c.i
 
 CMakeFiles/cs252.dir/lab1-src/test8.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cs252.dir/lab1-src/test8.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hanwang/CLionProjects/cs252/lab1-src/test8.c -o CMakeFiles/cs252.dir/lab1-src/test8.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/HanWang/ClionProjects/cs252/lab1-src/test8.c -o CMakeFiles/cs252.dir/lab1-src/test8.c.s
 
 CMakeFiles/cs252.dir/lab1-src/test8.c.o.requires:
 
@@ -419,16 +419,16 @@ CMakeFiles/cs252.dir/lab1-src/test8.c.o.provides.build: CMakeFiles/cs252.dir/lab
 
 CMakeFiles/cs252.dir/lab1-src/test9.c.o: CMakeFiles/cs252.dir/flags.make
 CMakeFiles/cs252.dir/lab1-src/test9.c.o: ../lab1-src/test9.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/cs252.dir/lab1-src/test9.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test9.c.o   -c /Users/hanwang/CLionProjects/cs252/lab1-src/test9.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/cs252.dir/lab1-src/test9.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/cs252.dir/lab1-src/test9.c.o   -c /Users/HanWang/ClionProjects/cs252/lab1-src/test9.c
 
 CMakeFiles/cs252.dir/lab1-src/test9.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cs252.dir/lab1-src/test9.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/hanwang/CLionProjects/cs252/lab1-src/test9.c > CMakeFiles/cs252.dir/lab1-src/test9.c.i
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/HanWang/ClionProjects/cs252/lab1-src/test9.c > CMakeFiles/cs252.dir/lab1-src/test9.c.i
 
 CMakeFiles/cs252.dir/lab1-src/test9.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cs252.dir/lab1-src/test9.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/hanwang/CLionProjects/cs252/lab1-src/test9.c -o CMakeFiles/cs252.dir/lab1-src/test9.c.s
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/HanWang/ClionProjects/cs252/lab1-src/test9.c -o CMakeFiles/cs252.dir/lab1-src/test9.c.s
 
 CMakeFiles/cs252.dir/lab1-src/test9.c.o.requires:
 
@@ -481,7 +481,7 @@ cs252: CMakeFiles/cs252.dir/lab1-src/test8.c.o
 cs252: CMakeFiles/cs252.dir/lab1-src/test9.c.o
 cs252: CMakeFiles/cs252.dir/build.make
 cs252: CMakeFiles/cs252.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking C executable cs252"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking C executable cs252"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cs252.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -513,6 +513,6 @@ CMakeFiles/cs252.dir/clean:
 .PHONY : CMakeFiles/cs252.dir/clean
 
 CMakeFiles/cs252.dir/depend:
-	cd /Users/hanwang/CLionProjects/cs252/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/hanwang/CLionProjects/cs252 /Users/hanwang/CLionProjects/cs252 /Users/hanwang/CLionProjects/cs252/cmake-build-debug /Users/hanwang/CLionProjects/cs252/cmake-build-debug /Users/hanwang/CLionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/HanWang/ClionProjects/cs252/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/HanWang/ClionProjects/cs252 /Users/HanWang/ClionProjects/cs252 /Users/HanWang/ClionProjects/cs252/cmake-build-debug /Users/HanWang/ClionProjects/cs252/cmake-build-debug /Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/cs252.dir/depend
 
