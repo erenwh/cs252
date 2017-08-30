@@ -134,14 +134,14 @@ static void *allocateObject(size_t size) {
             bt._objectSizeAndAlloc = bt._objectSizeAndAlloc - roundedSize;
 
             FreeObject *f = (FreeObject *) _mem;
-            setSize(f->boundary_tag, roundedSize);
-            setAllocated(f->boundary_tag,ALLOCATED);
+            setSize(&f, roundedSize);
+            setAllocated(&f,ALLOCATED);
             f->boundary_tag._leftObjectSize = bt._objectSizeAndAlloc;
             char *new = _mem + roundedSize;
             FreeObject *r = (FreeObject *) new;
-            r->_leftObjectSize = roundedSize;
+            r->boundary_tag._leftObjectSize = roundedSize;
             pthread_mutex_unlock(&mutex);
-            return (void *)((char *)f + sizeOf(FreeObject);
+            return (void *)((char *)f + sizeof(FreeObject);
             // large enough for rounded size, SPLIT
             // TODO split the block
             //FreeListNode updatedMem = _freeList->free_list_node._next;
