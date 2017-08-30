@@ -129,30 +129,41 @@ static void *allocateObject(size_t size) {
         // the block in two.
         BoundaryTag bt = ptr->boundary_tag;
         if (ptr->boundary_tag._objectSizeAndAlloc >= roundedSize) {
+            // get memory
+            char *_mem = (char *) ptr + bt._objectSizeAndAlloc - roundedSize;
+            bt._objectSizeAndAlloc = bt._objectSizeAndAlloc - roundedSize;
 
+            FreeObject *f = (FreeObject *) _mem;
+            setSize(f->boundary_tag, roundedSize);
+            setAllocated(f->boundary_tag,ALLOCATED);
+            f->boundary_tag._leftObjectSize = bt._objectSizeAndAlloc;
+            char *new = _mem + roundedSize;
+            FreeObject *r = (FreeObject *) new;
+            r->_leftObjectSize = roundedSize;
+            pthread_mutex_unlock(&mutex);
+            return (void *)((char *)f + sizeOf(FreeObject);
             // large enough for rounded size, SPLIT
             // TODO split the block
-
+            //FreeListNode updatedMem = _freeList->free_list_node._next;
             // Set the _allocated bit in the header and update the proceeding block’s _leftObjectSize to the size of
             // the allocated block.
-            setAllocated(&bt,ALLOCATED);
-            bt._leftObjectSize = bt._leftObjectSize - roundedSize;
-
+            //bt._objectSizeAndAlloc = 
+            //setAllocated(&bt,ALLOCATED);
             // The chosen block should be removed from the free list and returned to satisfy the request
             // (see the diagrams below).
-            ptr->free_list_node._prev->free_list_node._prev = ptr->free_list_node._prev;
-            ptr->free_list_node._next->free_list_node._next = ptr->free_list_node._next;
+            //ptr->free_list_node._prev->free_list_node._prev = ptr->free_list_node._prev;
+            //ptr->free_list_node._next->free_list_node._next = ptr->free_list_node._next;
             break;
         }
         // If the block is not large enough to be split, simply remove that block from the list and return it.
-        else if() {
+        //else if() {
 
-        }
+        //}
         // If the list does not have enough memory, request a new 2MB block, insert the block into the free list,
         // and repeat step 3.
-        else {
+        //else {
 
-        }
+        //}
 
         ptr = ptr->free_list_node._next;
     }
