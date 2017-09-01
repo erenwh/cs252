@@ -206,7 +206,11 @@ static void *allocateObject(size_t size) {
  * @param ptr
  */
 static void freeObject(void *ptr) {
+    // Check the if the header of one or both of the neighboring blocks are free. If they are free then coalesce
+    // the block being freed into the unallocated blocks.
 
+    // If neither the left nor right neighbors are free, simply mark the block as free and insert it at the head
+    // of the free list.
     return;
 }
 
