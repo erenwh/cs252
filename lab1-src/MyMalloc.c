@@ -194,11 +194,6 @@ static void *allocateObject(size_t size) {
 }
 
 
-
-
-
-
-
 /**
  * @brief TODO: PART 2
  * This funtion takes a pointer to memory returned by the program, and
@@ -208,6 +203,32 @@ static void *allocateObject(size_t size) {
  * @param ptr
  */
 static void freeObject(void *ptr) {
+    // Check the if the header of one or both of the neighboring blocks are free. If they are free then coalesce
+    // the block being freed into the unallocated blocks.
+
+    //create a pointer by minus the size of it
+    FreeObject *pointer = (FreeObject *) ((char*)ptr - sizeof(FreeObject));
+    // find left by minus left size from boundary tag
+    FreeObject *left = (FreeObject *) ((char*)pointer - pointer->boundary_tag._leftObjectSize);
+    // find right by plus the size of current size
+    FreeObject *right = (FreeObject *) ((char*)pointer - pointer->boundary_tag._objectSizeAndAlloc);
+
+    // Check left
+    if (!isAllocated(&left->boundary_tag) && !isAllocated(&right->boundary_tag)) { //both free
+        setAllocated(&pointer->boundary_tag, NOT_ALLOCATED);
+        // update size
+        left->boundary_tag._objectSizeAndAlloc += right->boundary_tag._objectSizeAndAlloc;
+        FreeObject *rightOfRight = (FreeObject*) ((char*)right + right->boundary_tag._objectSizeAndAlloc);
+        // update rightOfright's left size
+        rightOfRight->boundary_tag._leftObjectSize = left->boundary_tag._objectSizeAndAlloc;
+        // update freelist pointers
+        right->free_list_node._prev->free_list_node._next = right->free_list_node._next;
+        right->free_list_node._next->free_list_node._next = right->free_list_node._prev;
+    }
+
+
+    // If neither the left nor right neighbors are free, simply mark the block as free and insert it at
+    // the head of the free list.
     return;
 }
 
