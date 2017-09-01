@@ -213,11 +213,13 @@ static void freeObject(void *ptr) {
     // find right by plus the size of current size
     FreeObject *right = (FreeObject *) ((char*)pointer - pointer->boundary_tag._objectSizeAndAlloc);
 
-    // Check left
-    if (!isAllocated(&left->boundary_tag) && !isAllocated(&right->boundary_tag)) { //both free
+    // both free
+    if (!isAllocated(&left->boundary_tag) && !isAllocated(&right->boundary_tag)) {
         setAllocated(&pointer->boundary_tag, NOT_ALLOCATED);
         // update size
-        left->boundary_tag._objectSizeAndAlloc += right->boundary_tag._objectSizeAndAlloc;
+        left->boundary_tag._objectSizeAndAlloc = left->boundary_tag._objectSizeAndAlloc
+                                                 + pointer->boundary_tag._objectSizeAndAlloc
+                                                 + right->boundary_tag._objectSizeAndAlloc;
         FreeObject *rightOfRight = (FreeObject*) ((char*)right + right->boundary_tag._objectSizeAndAlloc);
         // update rightOfright's left size
         rightOfRight->boundary_tag._leftObjectSize = left->boundary_tag._objectSizeAndAlloc;
@@ -225,10 +227,30 @@ static void freeObject(void *ptr) {
         right->free_list_node._prev->free_list_node._next = right->free_list_node._next;
         right->free_list_node._next->free_list_node._next = right->free_list_node._prev;
     }
+        // left free, right allocated
+    else if (!isAllocated(&left->boundary_tag)) {
+        // update size
+        left->boundary_tag._objectSizeAndAlloc = left->boundary_tag._objectSizeAndAlloc
+                                                 + pointer->boundary_tag._objectSizeAndAlloc;
+        setAllocated(&pointer->boundary_tag, NOT_ALLOCATED);
+        // update leftobjectsize
+        right->boundary_tag._leftObjectSize = left->boundary_tag._objectSizeAndAlloc;
+    }
+        // left allocated, right free
+    else if (!isAllocated(&right->boundary_tag)){
+
+    }
+        // If neither the left nor right neighbors are free, simply mark the block as free and insert it at
+        // the head of the free list.
+
+        // both allocated
+    else {
+
+    }
 
 
-    // If neither the left nor right neighbors are free, simply mark the block as free and insert it at
-    // the head of the free list.
+
+
     return;
 }
 
