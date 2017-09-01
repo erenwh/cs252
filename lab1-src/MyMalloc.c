@@ -215,13 +215,15 @@ static void freeObject(void *ptr) {
 
     // both free
     if (!isAllocated(&left->boundary_tag) && !isAllocated(&right->boundary_tag)) {
+        // update Allocation status
         setAllocated(&pointer->boundary_tag, NOT_ALLOCATED);
         // update size
         left->boundary_tag._objectSizeAndAlloc = left->boundary_tag._objectSizeAndAlloc
                                                  + pointer->boundary_tag._objectSizeAndAlloc
                                                  + right->boundary_tag._objectSizeAndAlloc;
+        // new freeObject
         FreeObject *rightOfRight = (FreeObject*) ((char*)right + right->boundary_tag._objectSizeAndAlloc);
-        // update rightOfright's left size
+        // update rightOfright's left size as left
         rightOfRight->boundary_tag._leftObjectSize = left->boundary_tag._objectSizeAndAlloc;
         // update freelist pointers
         right->free_list_node._prev->free_list_node._next = right->free_list_node._next;
@@ -232,12 +234,27 @@ static void freeObject(void *ptr) {
         // update size
         left->boundary_tag._objectSizeAndAlloc = left->boundary_tag._objectSizeAndAlloc
                                                  + pointer->boundary_tag._objectSizeAndAlloc;
+        // update Allocation status
         setAllocated(&pointer->boundary_tag, NOT_ALLOCATED);
         // update leftobjectsize
         right->boundary_tag._leftObjectSize = left->boundary_tag._objectSizeAndAlloc;
     }
         // left allocated, right free
     else if (!isAllocated(&right->boundary_tag)){
+        // update Allocation status
+        setAllocated(&pointer->boundary_tag, NOT_ALLOCATED);
+        // update size
+        pointer->boundary_tag._objectSizeAndAlloc = pointer->boundary_tag._objectSizeAndAlloc
+                                                    + right->boundary_tag._objectSizeAndAlloc;
+        // new freeObject(just copy from "BOTH FREE" part
+        FreeObject *rightOfRight = (FreeObject*) ((char*)right + right->boundary_tag._objectSizeAndAlloc);
+        // update right OfRight's left size as current
+        rightOfRight->boundary_tag._leftObjectSize = pointer->boundary_tag._objectSizeAndAlloc;
+        // update freelist pointers
+        right->free_list_node._prev->free_list_node._next = pointer;
+        right->free_list_node._prev = right->free_list_node._prev;
+        right->free_list_node._next = right->free_list_node._next;
+        right->free_list_node._next->free_list_node._prev = pointer;
 
     }
         // If neither the left nor right neighbors are free, simply mark the block as free and insert it at
@@ -245,12 +262,14 @@ static void freeObject(void *ptr) {
 
         // both allocated
     else {
-
+        // update Allocation status
+        setAllocated(&pointer->boundary_tag, NOT_ALLOCATED);
+        // update pointers to the head of the freelist
+        pointer->free_list_node._next = _freeList->free_list_node._next;
+        pointer->free_list_node._prev = _freeList;
+        _freeList->free_list_node._next->free_list_node._prev = pointer;
+        _freeList->free_list_node._next = pointer;
     }
-
-
-
-
     return;
 }
 
