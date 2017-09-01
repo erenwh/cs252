@@ -116,8 +116,13 @@ static void *allocateObject(size_t size) {
 
     // Round up the requested size to the next 8 byte boundary.
     // Add the size of the block’s header (i.e. real_size = roundup8(requested size) + sizeof(header)).
-    size_t roundedSize = (size + sizeof(FreeObject) + 7) & ~7;
-
+    size_t roundedSize = (size + sizeof(BoundaryTag) + 7) & ~7;
+    // the allocated block should be at least (rounded_requested_size + sizeof(struct BoundaryTag)) which in total
+    // should be at least sizeof(struct FreeObject). The reason behind this is that we would like to reduce the
+    // size of a header when a chunk is allocated.
+    if (roundedSize < sizeof(struct FreeObject))
+        roundedSize = sizeof(struct FreeObject);
+    //fprintf(stderr,"%zu\n",roundedSize);
     // creating a temporary pointer and checking through the freelist
     FreeObject *ptr = _freeList->free_list_node._next;
 
@@ -125,9 +130,10 @@ static void *allocateObject(size_t size) {
     // fit).
     while (ptr != _freeList) { // when fo hit sentinal again = the freelist has been traversed
 
+        size_t reminder = ptr->boundary_tag._objectSizeAndAlloc - roundedSize;
+        fprintf(stderr,"%zu\n",reminder);
         // If the block is large enough to be split (that is, the remainder is at least the size of the headers), split
         // the block in two.
-        size_t reminder = ptr->boundary_tag._objectSizeAndAlloc - roundedSize;
         // large enough for rounded size, SPLIT
         if ((ptr->boundary_tag._objectSizeAndAlloc >= roundedSize) &&
                 (reminder >= (sizeof(FreeObject) + 8))) {
@@ -139,6 +145,7 @@ static void *allocateObject(size_t size) {
             setSize(&f->boundary_tag, roundedSize);
             setAllocated(&f->boundary_tag,ALLOCATED);
             ptr->boundary_tag._objectSizeAndAlloc -= roundedSize;
+
             f->boundary_tag._leftObjectSize = ptr->boundary_tag._objectSizeAndAlloc;
             char *new = _mem + roundedSize;
             FreeObject *nextBlock = (FreeObject *) new;
