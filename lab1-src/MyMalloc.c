@@ -128,11 +128,14 @@ static void *allocateObject(size_t size) {
         // If the block is large enough to be split (that is, the remainder is at least the size of the headers), split
         // the block in two.
         size_t reminder = ptr->boundary_tag._objectSizeAndAlloc - roundedSize;
+        // large enough for rounded size, SPLIT
         if ((ptr->boundary_tag._objectSizeAndAlloc >= roundedSize) &&
                 (reminder >= (sizeof(FreeObject) + 8))) {
             // get memory
             char *_mem = (char *) ptr + ptr->boundary_tag._objectSizeAndAlloc - roundedSize;
             FreeObject *f = (FreeObject *) _mem;
+            // Set the _allocated bit in the header and update the proceeding block’s _leftObjectSize to the size of
+            // the allocated block.
             setSize(&f->boundary_tag, roundedSize);
             setAllocated(&f->boundary_tag,ALLOCATED);
             ptr->boundary_tag._objectSizeAndAlloc -= roundedSize;
@@ -142,12 +145,6 @@ static void *allocateObject(size_t size) {
             nextBlock->boundary_tag._leftObjectSize = roundedSize;
             pthread_mutex_unlock(&mutex);
             return (void *)((char *)f + sizeof(FreeObject));
-            // large enough for rounded size, SPLIT
-            //FreeListNode updatedMem = _freeList->free_list_node._next;
-            // Set the _allocated bit in the header and update the proceeding block’s _leftObjectSize to the size of
-            // the allocated block.
-            //bt._objectSizeAndAlloc = 
-            //setAllocated(&bt,ALLOCATED);
             // The chosen block should be removed from the free list and returned to satisfy the request
             // (see the diagrams below).
             //ptr->free_list_node._prev->free_list_node._prev = ptr->free_list_node._prev;
@@ -155,19 +152,19 @@ static void *allocateObject(size_t size) {
 
         }
         // If the block is not large enough to be split, simply remove that block from the list and return it.
-        else if(ptr->boundary_tag._objectSizeAndAlloc >= roundedSize && reminder < (sizeof(FreeObject) + 8)) {
+        if(ptr->boundary_tag._objectSizeAndAlloc >= roundedSize && reminder < (sizeof(FreeObject) + 8)) {
             ptr->free_list_node._prev->free_list_node._next = ptr->free_list_node._next;
             ptr->free_list_node._next->free_list_node._prev = ptr->free_list_node._prev;
             setAllocated(&ptr->boundary_tag,ALLOCATED);
             pthread_mutex_unlock(&mutex);
             return (void *) ((char *)ptr + sizeof(FreeObject));
         }
-        ptr = ptr->free_list_node._next
+        ptr = ptr->free_list_node._next;
         // If the list does not have enough memory, request a new 2MB block, insert the block into the free list,
         // and repeat step 3.
-        //else {
+        if(ptr == _freeList) {
 
-        //}
+        }
 
 
     }
