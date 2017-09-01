@@ -131,19 +131,19 @@ static void *allocateObject(size_t size) {
     while (ptr != _freeList) { // when fo hit sentinal again = the freelist has been traversed
 
         size_t reminder = ptr->boundary_tag._objectSizeAndAlloc - roundedSize;
-        fprintf(stderr,"%zu\n",reminder);
+        //fprintf(stderr, "%zu\n", reminder);
         // If the block is large enough to be split (that is, the remainder is at least the size of the headers), split
         // the block in two.
         // large enough for rounded size, SPLIT
         if ((ptr->boundary_tag._objectSizeAndAlloc >= roundedSize) &&
-                (reminder >= (sizeof(FreeObject) + 8))) {
+            (reminder >= (sizeof(FreeObject) + 8))) {
             // get memory
             char *_mem = (char *) ptr + ptr->boundary_tag._objectSizeAndAlloc - roundedSize;
             FreeObject *f = (FreeObject *) _mem;
             // Set the _allocated bit in the header and update the proceeding block’s _leftObjectSize to the size of
             // the allocated block.
             setSize(&f->boundary_tag, roundedSize);
-            setAllocated(&f->boundary_tag,ALLOCATED);
+            setAllocated(&f->boundary_tag, ALLOCATED);
             ptr->boundary_tag._objectSizeAndAlloc -= roundedSize;
 
             f->boundary_tag._leftObjectSize = ptr->boundary_tag._objectSizeAndAlloc;
@@ -151,7 +151,7 @@ static void *allocateObject(size_t size) {
             FreeObject *nextBlock = (FreeObject *) new;
             nextBlock->boundary_tag._leftObjectSize = roundedSize;
             pthread_mutex_unlock(&mutex);
-            return (void *)((char *)f + sizeof(FreeObject));
+            return (void *) ((char *) f + sizeof(FreeObject));
             // The chosen block should be removed from the free list and returned to satisfy the request
             // (see the diagrams below).
             //ptr->free_list_node._prev->free_list_node._prev = ptr->free_list_node._prev;
@@ -159,29 +159,45 @@ static void *allocateObject(size_t size) {
 
         }
         // If the block is not large enough to be split, simply remove that block from the list and return it.
-        if(ptr->boundary_tag._objectSizeAndAlloc >= roundedSize && reminder < (sizeof(FreeObject) + 8)) {
+        if (ptr->boundary_tag._objectSizeAndAlloc >= roundedSize && reminder < (sizeof(FreeObject) + 8)) {
             ptr->free_list_node._prev->free_list_node._next = ptr->free_list_node._next;
             ptr->free_list_node._next->free_list_node._prev = ptr->free_list_node._prev;
-            setAllocated(&ptr->boundary_tag,ALLOCATED);
+            setAllocated(&ptr->boundary_tag, ALLOCATED);
             pthread_mutex_unlock(&mutex);
-            return (void *) ((char *)ptr + sizeof(FreeObject));
+            return (void *) ((char *) ptr + sizeof(FreeObject));
         }
         ptr = ptr->free_list_node._next;
         // If the list does not have enough memory, request a new 2MB block, insert the block into the free list,
         // and repeat step 3.
-        if(ptr == _freeList) {
 
+        if (ptr == _freeList) {
+            // get 2MB from os
+            FreeObject *newChunk = getNewChunk(ARENA_SIZE);
+            //set size and alloc
+            setSize(&newChunk->boundary_tag, ARENA_SIZE - (2 * sizeof(BoundaryTag))); // ~2MB
+            newChunk->boundary_tag._leftObjectSize = 0;
+            setAllocated(&newChunk->boundary_tag, NOT_ALLOCATED);
+            // insert the block into the free list
+            newChunk->free_list_node._next = ptr->free_list_node._next;
+            ptr->free_list_node._next->free_list_node._prev = newChunk;
+            ptr->free_list_node._next = newChunk;
+            newChunk->free_list_node._prev = ptr;
+            // point the ptr to new block
+            ptr = _freeList->free_list_node._next;
         }
 
 
     }
-
-
-
-
-    pthread_mutex_unlock(&mutex);
-    return getMemoryFromOS(size);
+    //pthread_mutex_unlock(&mutex);
+    //return getMemoryFromOS(size);
+    return (void *) fprintf(stderr, "Something went wrong\n");
 }
+
+
+
+
+
+
 
 /**
  * @brief TODO: PART 2
