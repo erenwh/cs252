@@ -5,7 +5,6 @@ set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
         lab1-src/Makefile
-        lab1-src/MyMalloc.c
         lab1-src/MyMalloc.h
         lab1-src/none
         lab1-src/test0.c
