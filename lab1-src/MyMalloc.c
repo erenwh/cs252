@@ -110,59 +110,45 @@ static void initialize() {
  * program
  */
 static void *allocateObject(size_t size) {
+
     // Make sure that allocator is initialized
     if (!_initialized)
         initialize();
-
-    if (size == 0 || size > ARENA_SIZE) {
+    if (size == 0 || size >= ARENA_SIZE) {
         return NULL;
     }
-    // Round up the requested size to the next 8 byte boundary.
-    // Add the size of the block’s header (i.e. real_size = roundup8(requested size) + sizeof(header)).
+    //Round up the requested size to the next 8 byte boundary.
     size_t roundedSize = (size + sizeof(BoundaryTag) + 7) & ~7;
-    // the allocated block should be at least (rounded_requested_size + sizeof(struct BoundaryTag)) which in total
-    // should be at least sizeof(struct FreeObject). The reason behind this is that we would like to reduce the
-    // size of a header when a chunk is allocated.
+    //The minimum size of an allocation is sizeof(FreeObject) as when the memory is freed it will take that much
+    // space to maintain its place in the free list. If a smaller size of bytes is allocated then there will be
+    // potential for corrupting the next block’s boundary tag
     if (roundedSize < sizeof(struct FreeObject))
         roundedSize = sizeof(struct FreeObject);
-    //fprintf(stderr,"%zu\n",roundedSize);
-    // creating a temporary pointer and checking through the freelist
     FreeObject *ptr = _freeList->free_list_node._next;
-
-    // Traverse the free list from the beginning, and find the first block large enough to satisfy the request (first
-    // fit).
-    while (ptr != _freeList) { // when fo hit sentinal again = the freelist has been traversed
-
+    //Traverse the free list from the beginning, and find the first block large enough to satisfy the request
+    // (first fit).
+    while (ptr != _freeList) {
         size_t reminder = ptr->boundary_tag._objectSizeAndAlloc - roundedSize;
         //fprintf(stderr, "%zu\n", reminder);
-        // If the block is large enough to be split (that is, the remainder is at least the size of the headers), split
-        // the block in two.
-        // large enough for rounded size, SPLIT
+        //If the block is large enough to be split (that is, the remainder is at least the size of the headers),
+        // split the block in two.
         if ((ptr->boundary_tag._objectSizeAndAlloc >= roundedSize) &&
             (reminder >= (sizeof(FreeObject) + 8))) {
-            // get memory
             char *_mem = (char *) ptr + ptr->boundary_tag._objectSizeAndAlloc - roundedSize;
             FreeObject *f = (FreeObject *) _mem;
-            // Set the _allocated bit in the header and update the proceeding block’s _leftObjectSize to the size of
-            // the allocated block.
+            //Set the _allocated bit in the header
             setSize(&f->boundary_tag, roundedSize);
             setAllocated(&f->boundary_tag, ALLOCATED);
-            ptr->boundary_tag._objectSizeAndAlloc -= roundedSize;
-
+            setSize(&ptr->boundary_tag, ptr->boundary_tag._objectSizeAndAlloc - roundedSize);
+            // and update the proceeding block’s _leftObjectSize to the size of the allocated block.
             f->boundary_tag._leftObjectSize = ptr->boundary_tag._objectSizeAndAlloc;
-            char *new = _mem + roundedSize;
-            FreeObject *nextBlock = (FreeObject *) new;
-            nextBlock->boundary_tag._leftObjectSize = roundedSize;
+            //The chosen block should be removed from the free list and returned to satisfy the request
+            //TODO
             pthread_mutex_unlock(&mutex);
             return (void *) ((char *) f + sizeof(FreeObject));
-            // The chosen block should be removed from the free list and returned to satisfy the request
-            // (see the diagrams below).
-            //ptr->free_list_node._prev->free_list_node._prev = ptr->free_list_node._prev;
-            //ptr->free_list_node._next->free_list_node._next = ptr->free_list_node._next;
-
         }
         // If the block is not large enough to be split, simply remove that block from the list and return it.
-        if (ptr->boundary_tag._objectSizeAndAlloc >= roundedSize && reminder < (sizeof(FreeObject) + 8)) {
+        else if (ptr->boundary_tag._objectSizeAndAlloc >= roundedSize && reminder < (sizeof(FreeObject) + 8)) {
             ptr->free_list_node._prev->free_list_node._next = ptr->free_list_node._next;
             ptr->free_list_node._next->free_list_node._prev = ptr->free_list_node._prev;
             setAllocated(&ptr->boundary_tag, ALLOCATED);
@@ -181,18 +167,19 @@ static void *allocateObject(size_t size) {
             newChunk->boundary_tag._leftObjectSize = 0;
             setAllocated(&newChunk->boundary_tag, NOT_ALLOCATED);
             // insert the block into the free list
-            newChunk->free_list_node._next = ptr->free_list_node._next;
-            ptr->free_list_node._next->free_list_node._prev = newChunk;
-            ptr->free_list_node._next = newChunk;
-            newChunk->free_list_node._prev = ptr;
-            // point the ptr to new block
-            ptr = _freeList->free_list_node._next;
+            newChunk->free_list_node._next = _freeList->free_list_node._next;
+            newChunk->free_list_node._prev = _freeList;
+            _freeList->free_list_node._next->free_list_node._prev = newChunk;
+            _freeList->free_list_node._next = newChunk;
+            FreeObject *right = (FreeObject *) ((char *)newChunk + newChunk->boundary_tag._objectSizeAndAlloc);
+            right->boundary_tag._leftObjectSize = newChunk->boundary_tag._objectSizeAndAlloc;
+            //return  allocateObject(size);
+
         }
 
 
     }
     //pthread_mutex_unlock(&mutex);
-    //return getMemoryFromOS(size);
     return getMemoryFromOS(size);
 }
 
@@ -208,10 +195,56 @@ static void *allocateObject(size_t size) {
 static void freeObject(void *ptr) {
     // Check the if the header of one or both of the neighboring blocks are free. If they are free then coalesce
     // the block being freed into the unallocated blocks.
+    /*FreeObject *pointer = (FreeObject *) ((char *)ptr - sizeof(FreeObject));
+    FreeObject *left = (FreeObject *) ((char *)pointer - pointer->boundary_tag._leftObjectSize);
+    FreeObject *right = (FreeObject *) ((char *)pointer + pointer->boundary_tag._objectSizeAndAlloc);*/
+    FreeObject *initptr = (FreeObject *) ((char *) ptr - sizeof(FreeObject));
+    FreeObject *left = (FreeObject *) ((char *) initptr - initptr->boundary_tag._leftObjectSize);
+    FreeObject *right = (FreeObject *) ((char *) initptr + initptr->boundary_tag._objectSizeAndAlloc);
+    FreeObject *rright = (FreeObject *) ((char *) right + right->boundary_tag._objectSizeAndAlloc);
+    int left_free = 0;
+    int right_free = 0;
+    if (!isAllocated(&left->boundary_tag) /*&& (getSize(&left->boundary_tag) != 0)*/) left_free = 1;
+    if (!isAllocated(&right->boundary_tag) /*&& (getSize(&right->boundary_tag) != 0)*/) right_free = 1;
+    fprintf(stderr, "left= %d, right = %d\n", left_free, right_free);
+    if (left_free==0 && right_free==0) {
+        setAllocated(&initptr->boundary_tag, NOT_ALLOCATED);
+        setSize(&left->boundary_tag, left->boundary_tag._objectSizeAndAlloc
+                                     + initptr->boundary_tag._objectSizeAndAlloc
+                                       + right->boundary_tag._objectSizeAndAlloc);
+        rright->boundary_tag._leftObjectSize = left->boundary_tag._objectSizeAndAlloc;
+        right->free_list_node._prev->free_list_node._next = right->free_list_node._next;
+        right->free_list_node._next->free_list_node._next = right->free_list_node._prev;
+    } else if (left_free==0) {
+        setSize(&left->boundary_tag, left->boundary_tag._objectSizeAndAlloc
+                                     + initptr->boundary_tag._objectSizeAndAlloc);
+        setAllocated(&initptr->boundary_tag,NOT_ALLOCATED);
+        right->boundary_tag._leftObjectSize = left->boundary_tag._objectSizeAndAlloc;
+    } else if (right_free==0) {
+        setAllocated(&initptr->boundary_tag, NOT_ALLOCATED);
+        setSize(&initptr->boundary_tag, initptr->boundary_tag._objectSizeAndAlloc
+                                        + right->boundary_tag._objectSizeAndAlloc);
+        rright->boundary_tag._leftObjectSize = initptr->boundary_tag._objectSizeAndAlloc;
+        right->free_list_node._prev->free_list_node._next = initptr;
+        initptr->free_list_node._prev = right->free_list_node._prev;
+        initptr->free_list_node._next = right->free_list_node._next;
+        right->free_list_node._next->free_list_node._prev = initptr;
+    } else {
+        setAllocated(&initptr->boundary_tag, NOT_ALLOCATED);
+        initptr->free_list_node._next = _freeList->free_list_node._next;
+        initptr->free_list_node._prev = _freeList;
+        _freeList->free_list_node._next->free_list_node._prev = initptr;
+        _freeList->free_list_node._next = initptr;
+    }
+
+
+
 
     // If neither the left nor right neighbors are free, simply mark the block as free and insert it at the head
     // of the free list.
-    return;
+    //pthread_mutex_unlock(&mutex);
+
+
 }
 
 void print() {
