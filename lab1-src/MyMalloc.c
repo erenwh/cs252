@@ -115,6 +115,7 @@ static void *allocateObject(size_t size) {
     if (!_initialized)
         initialize();
     if (size == 0 || size >= ARENA_SIZE) {
+        errno = ENOMEM;
         return NULL;
     }
     //Round up the requested size to the next 8 byte boundary.
