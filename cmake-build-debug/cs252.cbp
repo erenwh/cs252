@@ -85,9 +85,6 @@
 		<Unit filename="/Users/HanWang/ClionProjects/cs252/lab1-src/Makefile">
 			<Option target="cs252"/>
 		</Unit>
-		<Unit filename="/Users/HanWang/ClionProjects/cs252/lab1-src/MyMalloc.c">
-			<Option target="cs252"/>
-		</Unit>
 		<Unit filename="/Users/HanWang/ClionProjects/cs252/lab1-src/MyMalloc.h">
 			<Option target="cs252"/>
 		</Unit>

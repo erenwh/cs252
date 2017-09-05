@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.o"
   "CMakeFiles/cs252.dir/lab1-src/test0.c.o"
   "CMakeFiles/cs252.dir/lab1-src/test1-1.c.o"
   "CMakeFiles/cs252.dir/lab1-src/test1-2.c.o"

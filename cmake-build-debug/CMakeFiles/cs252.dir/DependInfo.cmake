@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/HanWang/ClionProjects/cs252/lab1-src/MyMalloc.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.o"
   "/Users/HanWang/ClionProjects/cs252/lab1-src/test0.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test0.c.o"
   "/Users/HanWang/ClionProjects/cs252/lab1-src/test1-1.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test1-1.c.o"
   "/Users/HanWang/ClionProjects/cs252/lab1-src/test1-2.c" "/Users/HanWang/ClionProjects/cs252/cmake-build-debug/CMakeFiles/cs252.dir/lab1-src/test1-2.c.o"

@@ -123,33 +123,6 @@ cs252/fast:
 	$(MAKE) -f CMakeFiles/cs252.dir/build.make CMakeFiles/cs252.dir/build
 .PHONY : cs252/fast
 
-lab1-src/MyMalloc.o: lab1-src/MyMalloc.c.o
-
-.PHONY : lab1-src/MyMalloc.o
-
-# target to build an object file
-lab1-src/MyMalloc.c.o:
-	$(MAKE) -f CMakeFiles/cs252.dir/build.make CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.o
-.PHONY : lab1-src/MyMalloc.c.o
-
-lab1-src/MyMalloc.i: lab1-src/MyMalloc.c.i
-
-.PHONY : lab1-src/MyMalloc.i
-
-# target to preprocess a source file
-lab1-src/MyMalloc.c.i:
-	$(MAKE) -f CMakeFiles/cs252.dir/build.make CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.i
-.PHONY : lab1-src/MyMalloc.c.i
-
-lab1-src/MyMalloc.s: lab1-src/MyMalloc.c.s
-
-.PHONY : lab1-src/MyMalloc.s
-
-# target to generate assembly for a file
-lab1-src/MyMalloc.c.s:
-	$(MAKE) -f CMakeFiles/cs252.dir/build.make CMakeFiles/cs252.dir/lab1-src/MyMalloc.c.s
-.PHONY : lab1-src/MyMalloc.c.s
-
 lab1-src/test0.o: lab1-src/test0.c.o
 
 .PHONY : lab1-src/test0.o
@@ -564,9 +537,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... cs252"
-	@echo "... lab1-src/MyMalloc.o"
-	@echo "... lab1-src/MyMalloc.i"
-	@echo "... lab1-src/MyMalloc.s"
 	@echo "... lab1-src/test0.o"
 	@echo "... lab1-src/test0.i"
 	@echo "... lab1-src/test0.s"
